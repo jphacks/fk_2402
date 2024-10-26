@@ -4,11 +4,12 @@ class QuestionsController < ApplicationController
 
     def create
         @question = current_user.questions.build(question_params)
+        @question.image.attach(params[:question][:image])
         if @question.save
           flash[:success] = "Question created!"
           redirect_to rag_path
         else
-          render 'static_pages/home', status: :unprocessable_entity
+          render 'static_pages/rag', status: :unprocessable_entity
         end
       end
 
@@ -25,7 +26,7 @@ class QuestionsController < ApplicationController
     private
 
     def question_params
-      params.require(:question).permit(:content)
+      params.require(:question).permit(:content, :image)
     end
 
     def correct_user

@@ -12,6 +12,7 @@ class CommunitiesController < ApplicationController
   def show
     @community = Community.find(params[:id])
     @user = User.find(@community.creator_id)
+    @feed_items = current_user.feed.paginate(page: params[:page])
   end
 
   def create

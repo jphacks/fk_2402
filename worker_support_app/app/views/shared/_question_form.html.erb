@@ -4,5 +4,8 @@
       <%= f.text_area :content, placeholder: "Fill in your question..." %>
     </div>
     <%= f.submit "Ask a question", class: "btn btn-primary" %>
+    <span class="image">
+      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+    </span>
   <% end %>
   

@@ -2,5 +2,6 @@
   <ol class="questions">
     <%= render @feed_items %>
   </ol>
-  <%= will_paginate @feed_items %>
+  <%= will_paginate @feed_items,
+                    params: { controller: :communities, action: :show } %>
 <% end %>
