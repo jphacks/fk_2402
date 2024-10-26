@@ -1,0 +1,29 @@
+<% provide(:title, 'New Community') %>
+<h1>New Community</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @community) do |f| %>
+        <% if @community.errors.any? %>
+            <div id="error_explanation">
+            <div class="alert alert-danger">
+                The form contains <%= pluralize(@community.errors.count, "error") %>.
+             </div>
+            <ul>
+            <% @community.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+             </ul>
+            </div>
+        <% end %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :abstruct %>
+      <%= f.text_area :abstruct, placeholder: "Fill in abstruct of this community..." %>
+
+      <%= f.submit "Create new community", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

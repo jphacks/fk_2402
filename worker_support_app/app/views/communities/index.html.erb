@@ -1,0 +1,14 @@
+<% provide(:title, 'All communities') %>
+<h1>All communities</h1>
+
+<%= link_to "Create new Community!", make_path, class: "btn btn-lg btn-primary" %>
+
+<%= will_paginate %>
+
+<ul class="communities">
+<% @communities.each do |community| %>
+    <%= render community %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

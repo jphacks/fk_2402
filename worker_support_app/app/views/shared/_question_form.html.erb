@@ -1,0 +1,8 @@
+<%= form_with(model: @question) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "Fill in your question..." %>
+    </div>
+    <%= f.submit "Ask a question", class: "btn btn-primary" %>
+  <% end %>
+  

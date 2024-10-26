@@ -1,0 +1,7 @@
+<li>
+  <%= link_to community.name, community %>
+  <% if @user.id == community.creator_id %>
+    | <%= link_to "delete", community, data: { "turbo-method": :delete,
+                                          turbo_confirm: "You sure?" } %>
+  <% end %>
+</li>
