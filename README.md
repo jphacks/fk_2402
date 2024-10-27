@@ -1,6 +1,8 @@
 # ワーキングサポート
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2024/07/JPHACKS2024_ogp.jpg)](https://www.youtube.com/watch?v=DZXUkEj-CSI)
+![サンプル画像](./images/sample.png "サンプル画像のタイトル")
+
+
 
 ## 製品概要
 ### 背景 (製品開発のきっかけ、課題等)
@@ -55,4 +57,3 @@
 #### ハッカソンで開発した独自機能・技術
 * RAGを活用した社内文書検索システム
 * コミュニティ機能によるフォロー機能と検索履歴管理
-* 特に力を入れた部分は[こちら](リンク先)（commit_id）で確認可能です。
