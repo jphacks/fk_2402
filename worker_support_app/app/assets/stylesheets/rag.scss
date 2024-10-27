@@ -1,0 +1,51 @@
+// rag.scss
+
+$dark-green: #4a8c4a; // 濃い緑色
+$light-green: #d9f7d9; // 明るい緑色
+$gold: #f2c94c; // 金色
+$white: #ffffff; // 白色
+$text-color: #333; // テキスト色
+
+.rag-container {
+  margin: 20px; // コンテナのマージン
+  display: flex; // Flexboxを使用
+
+  h1 {
+    color: $dark-green; // タイトルの色
+    text-align: center; // 中央揃え
+    margin-bottom: 30px; // 下のマージン
+    width: 100%; // 幅を100%に設定
+  }
+
+  .user-info-section {
+    background-color: $light-green; // 左側の背景色
+    padding: 20px; // パディング
+    border-radius: 8px; // 角を丸める
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // シャドウ効果
+    flex: 1; // 同じ高さにするための設定
+
+    .user_info,
+    .question_form {
+      margin-bottom: 20px; // 各セクションのマージン
+    }
+  }
+
+  .response-section {
+    background-color: $white; // 右側の背景色
+    padding: 20px; // パディング
+    border-radius: 8px; // 角を丸める
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // シャドウ効果
+    flex: 1; // 同じ高さにするための設定
+
+    h2 {
+      color: $dark-green; // セクションタイトルの色
+      margin-bottom: 15px; // 下のマージン
+    }
+
+    .response-message {
+      color: $text-color; // レスポンスのテキスト色
+      font-size: 16px; // フォントサイズ
+      line-height: 1.5; // 行間
+    }
+  }
+}

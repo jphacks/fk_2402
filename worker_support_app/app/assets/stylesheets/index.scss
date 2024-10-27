@@ -1,0 +1,31 @@
+// index.scss
+
+$dark-green: #4a8c4a; // 濃い緑色
+$light-green: #a8d8a2; // 明るい緑色
+$gold: #f2c94c; // 金色
+$white: #ffffff; // 白色
+
+h1 {
+  color: $dark-green; // ヘッダーの色
+  margin-bottom: 20px; // マージン
+}
+
+.btn-primary {
+  background-color: $dark-green; // ボタンの背景色
+  color: $white; // ボタンのテキスト色
+  padding: 10px 20px; // ボタンのパディング
+  border: none; // ボーダーなし
+  transition: background-color 0.3s; // トランジション
+
+  &:hover {
+    background-color: $gold; // ホバー時の背景色
+    color: $dark-green; // ホバー時のテキスト色
+  }
+}
+
+.communities {
+  padding: 0; // パディングなし
+  background-color: $light-green; // メイン部分の背景色
+  border-radius: 8px; // 角を丸める
+  padding: 20px; // パディング
+}

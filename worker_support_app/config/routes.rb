@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get "rags/create"
-  get "feedbacks/create"
-  get "communities/new"
   root "static_pages#home"
   get  "/rag",    to: "static_pages#rag"
   get  "/about",   to: "static_pages#about"
@@ -18,4 +15,5 @@ Rails.application.routes.draw do
     end
   end
   resources :questions, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end

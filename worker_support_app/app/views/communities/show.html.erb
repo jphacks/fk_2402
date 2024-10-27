@@ -3,12 +3,26 @@ creator: <%= @user.name %>
 
 <% provide(:title, "#{@community.name}") %>
 <h1><%= @community.name %></h1>
-
-
+<%= render 'follow_form' if logged_in? %>
 
 <div class="row">
-    <div class="col-md-8">
+<aside class="col-md-4">
+<section class="stats">
+    <%= render 'shared/stats' %>
+    <% if @users.any? %>
+    <div class="user_avatars">
+        <% @users.each do |user| %>
+        <%= link_to gravatar_for(user, size: 30), user %>
+        <% end %>
+    </div>
+    <% end %>
+</section>
+</aside>
+
+<div class="row">
+    <div class="col-md-4">
       <h3>Question Feed</h3>
       <%= render 'shared/feed' %>
     </div>
+</div>
 </div>

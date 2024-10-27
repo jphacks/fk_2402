@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ *= require _header
+ *= require _community
+ *= require index
+ *= require new
+ *= require show

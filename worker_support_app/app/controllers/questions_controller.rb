@@ -5,9 +5,9 @@ class QuestionsController < ApplicationController
     def create
         @question = current_user.questions.build(question_params)
         @question.image.attach(params[:question][:image])
-        if request.path == '/feedback'
+        if request.path == "/feedback"
           create_feedback(@question)
-        elsif
+        else
           if @question.save
             rag_service = RagService.new(params[:question][:content])
             @response_message = rag_service.generate_answer_with_retrieval

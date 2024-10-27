@@ -1,0 +1,40 @@
+// new.scss
+
+$dark-green: #4a8c4a; // 濃い緑色
+$light-green: #a8d8a2; // 明るい緑色
+$gold: #f2c94c; // 金色
+$white: #ffffff; // 白色
+
+h1 {
+  color: $dark-green; // ヘッダーの色
+}
+
+.row {
+  margin-top: 20px; // 上部マージン
+
+  .col-md-6 {
+    background-color: $light-green; // メイン部分の背景色
+    padding: 20px; // パディング
+    border-radius: 8px; // ボーダーの角を丸める
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // シャドウ効果
+
+    #error_explanation {
+      margin-bottom: 15px; // 下部マージン
+      background-color: lighten(red, 40%); // エラーメッセージの背景色
+      border: 1px solid red; // ボーダー
+      padding: 10px; // パディング
+
+      .alert {
+        color: red; // エラーメッセージの色
+      }
+    }
+
+    .form-control {
+      margin-bottom: 10px; // フィールド間のマージン
+    }
+
+    .btn-primary {
+      margin-top: 10px; // ボタン上部のマージン
+    }
+  }
+}

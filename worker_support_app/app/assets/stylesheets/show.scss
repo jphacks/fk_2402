@@ -1,0 +1,22 @@
+// show.scss
+
+$dark-green: #4a8c4a; // 濃い緑色
+$light-green: #a8d8a2; // 明るい緑色
+$gold: #f2c94c; // 金色
+$white: #ffffff; // 白色
+
+h1 {
+  color: $dark-green; // ヘッダーの色
+  margin-bottom: 20px; // マージン
+}
+
+.row {
+  margin-top: 20px; // 上部マージン
+
+  .col-md-8 {
+    padding: 20px; // パディング
+    background-color: $light-green; // メイン部分の背景色
+    border-radius: 8px; // ボーダーの角を丸める
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // シャドウ効果
+  }
+}

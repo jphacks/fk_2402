@@ -10,5 +10,6 @@ class StaticPagesController < ApplicationController
   end
 
   def feedback
+    @question = current_user.questions.build if logged_in?
   end
 end

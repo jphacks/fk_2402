@@ -13,6 +13,7 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @user = User.find(@community.creator_id)
     @feed_items = current_user.feed.paginate(page: params[:page])
+    @users ||= []
   end
 
   def create
@@ -31,6 +32,13 @@ class CommunitiesController < ApplicationController
     Community.find(params[:id]).destroy
     flash[:success] = "Community deleted"
     redirect_to communities_url, status: :see_other
+  end
+
+  def followers
+    @title = "Followers"
+    @community  = Community.find(params[:id])
+    @users = @community.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
 
   private
