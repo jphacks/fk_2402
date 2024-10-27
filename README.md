@@ -85,6 +85,7 @@ https://github.com/user-attachments/assets/bb1d6868-62e6-4dcb-a67e-02666d60805c
 
 ### デモンストレーション動画4 -ユーザ情報の変更/ユーザ個人ページへの履歴の表示-
 https://github.com/user-attachments/assets/e2c5cb88-896b-4c78-aecb-17461e9fdbcd
+##### 内容
 * Settingsをクリックするとユーザ情報を変更できる
 * 変更するとユーザ個人ページへ自動で遷移する
 * 先程の質問履歴は個人ページにも表示されていたことを確認
