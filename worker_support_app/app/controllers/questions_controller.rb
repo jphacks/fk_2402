@@ -5,11 +5,19 @@ class QuestionsController < ApplicationController
     def create
         @question = current_user.questions.build(question_params)
         @question.image.attach(params[:question][:image])
-        if @question.save
-          flash[:success] = "Question created!"
-          redirect_to rag_path
-        else
-          render 'static_pages/rag', status: :unprocessable_entity
+        if request.path == '/feedback'
+          create_feedback(@question)
+        elsif
+          if @question.save
+            rag_service = RagService.new(params[:question][:content])
+            @response_message = rag_service.generate_answer_with_retrieval
+            flash[:success] = "Question created!#{params[:question][:content]}"
+            @AI_question = current_user.questions.build(content: "#{@response_message}")
+            @AI_question.save
+            redirect_to communities_path
+          else
+            render 'static_pages/rag', status: :unprocessable_entity
+          end
         end
       end
 
@@ -34,4 +42,17 @@ class QuestionsController < ApplicationController
         redirect_to root_url, status: :see_other if @question.nil?
     end
 
+
+    def create_feedback(question)
+      if question.save
+        feedback_service = FeedbackService.new(params[:question][:content])
+        @response_message = feedback_service.generate_feedback
+        flash[:success] = "Question created!#{params[:question][:content]}"
+        @AI_question = current_user.questions.build(content: "#{@response_message}")
+        @AI_question.save
+        redirect_to communities_path
+      else
+        render 'static_pages/feedback', status: :unprocessable_entity
+      end
+    end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "rags/create"
+  get "feedbacks/create"
   get "communities/new"
   root "static_pages#home"
   get  "/rag",    to: "static_pages#rag"
@@ -10,6 +12,10 @@ Rails.application.routes.draw do
   delete "/logout",  to: "sessions#destroy"
   get  "/make",  to: "communities#new"
   resources :users
-  resources :communities, only: [:index, :new, :show, :create, :destroy]
+  resources :communities do
+    member do
+      get :followers
+    end
+  end
   resources :questions, only: [:create, :destroy]
 end

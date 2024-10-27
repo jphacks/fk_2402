@@ -1,9 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  abstruct: MyText
+community_A:
+  name: A's Company
+  abstruct: This is the community of A's Company.
+  creator_id: 2
 
-two:
-  name: MyString
-  abstruct: MyText
+community_B:
+  name: B'z Company
+  abstruct: This is the community of B'z company.
+  creator_id: 1

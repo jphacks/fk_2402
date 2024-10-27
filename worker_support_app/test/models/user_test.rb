@@ -84,4 +84,24 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "should follow and unfollow a user" do
+    michael = users(:michael)
+    @community_a = communities(:community_A)
+    @community_a.update_attribute(:creator_id, michael.id)
+    archer = users(:archer)
+    @community_b = communities(:community_B)
+    @community_b.update_attribute(:creator_id, archer.id)
+    community_a  = @community_a
+    community_b = @community_b
+    assert_not michael.following?(community_b)
+    michael.follow(community_b)
+    assert michael.following?(community_b)
+    assert community_b.followers.include?(michael)
+    michael.unfollow(community_b)
+    assert_not michael.following?(community_b)
+    # ユーザーは自分自身をフォローできない
+    michael.follow(community_a)
+    assert_not michael.following?(community_a)
+  end
+
 end
